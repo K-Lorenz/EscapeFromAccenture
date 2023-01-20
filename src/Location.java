@@ -20,6 +20,8 @@ public class Location {
         this.isFinished = isFinished;
         this.isRest = isRest;
         this.enemies = enemies;
+
+        
     }
 
     public String getName(){
@@ -70,6 +72,8 @@ public class Location {
         return enemies;
     }
     
+
+
 
     
 
