@@ -11,10 +11,9 @@ public class Location {
     private ArrayList<Enemy> enemies;
 
 
-    public Location(String name, Enemy boss, String room, int floor, int bossFloor,boolean isFinished, boolean isRest, ArrayList<Enemy> enemies){
+    public Location(String name, Enemy boss, int floor, int bossFloor,boolean isFinished, boolean isRest, ArrayList<Enemy> enemies){
         this.name = name;
         this.boss = boss;
-        this.room = room;
         this.floor = floor;
         this.bossFloor = bossFloor;
         this.isFinished = isFinished;

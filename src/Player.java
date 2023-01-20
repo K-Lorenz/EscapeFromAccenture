@@ -67,11 +67,10 @@ public class Player {
         return location;
     }
 
-    public Player(String name, String type, int hitPoints, int strength, int stamina, Weapon weapon) {
+    public Player(String name, String type, int hitPoints, int strength, int stamina) {
         this.name = name;
         this.hitPoints = hitPoints;
         this.stamina = stamina;
-        this.weapon = weapon;
         this.type = type;
         switch (type) {
             case "Assassine" -> {

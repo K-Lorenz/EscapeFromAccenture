@@ -8,9 +8,7 @@ public class Enemy {
     private int droppedXp;
     private ArrayList<Item> loot;
 
-   
-
-    public Enemy(String name, int hitPoints, Weapon weapon, int droppedXp, ArrayList<Item> loot){
+    public Enemy(String name, int hitPoints, int droppedXp, Weapon weapon, ArrayList<Item> loot){
         this.name = name;
         this.hitPoints = hitPoints;
         this.droppedXp = droppedXp;
