@@ -8,6 +8,8 @@ public class Player {
     private Weapon weapon;
     private Inventory inventory;
     private Location location;
+    private int maxHitPoints;
+    private int maxStamina;
 
     public void setHitPoints(int hitPoints) {
         this.hitPoints = hitPoints;
@@ -80,6 +82,20 @@ public class Player {
         this.stamina = stamina;
         this.weapon = weapon;
         this.type = type;
+        switch (type) {
+            case "Assassine" -> {
+                maxHitPoints = 15;
+                maxStamina = 20;
+            }
+            case "Fighter" -> {
+                maxHitPoints = 18;
+                maxStamina = 15;
+            }
+            case "Tank" -> {
+                maxStamina = 10;
+                maxHitPoints = 20;
+            }
+        }
     }
     public void move(Location location){
         setLocation(location);
@@ -91,14 +107,38 @@ public class Player {
 
         }
     }
-    public void consume(Item item){
-        switch(item.getName()){
-            case "":
+    public void consume(Item item) {
+        inventory.useItem(item);
+        switch (item.getName()) {
+            case "Fritz Limo Rot" -> {
+                hitPoints += 4;
+                if (hitPoints > maxHitPoints) {
+                    hitPoints = maxHitPoints;
+                }
+            }
+            case "Fritz Limo Gelb" -> {
+                stamina += 10;
+                if (stamina > maxStamina) {
+                    stamina = maxStamina;
+                }
+            }
+            case "Fritz Limo Orange" -> {
+                stamina += 5;
+                hitPoints += 2;
+                if (stamina > maxStamina) {
+                    stamina = maxStamina;
+                }
+                if (hitPoints > maxHitPoints) {
+                    hitPoints = maxHitPoints;
+                }
+            }
         }
     }
-    public void rest(){
-        if(location. == ""){
 
+    public void rest(){
+        if(location.getName().equals("Campus Kornberg")){
+            stamina = maxStamina;
+            hitPoints = maxHitPoints;
         }
     }
 }
